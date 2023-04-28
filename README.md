@@ -31,14 +31,14 @@
     - Added scripts to enable evaluation and testing on a number of mixture samples in one go
         - Refer to files within Evaluation Script directory
         - Usage : 
-                python multi_test.py --test_count <value> --testset_root <root dir of data> --testset_type <data split> 
-                python multi_eval.py --results_dir <directory of test_videos>
+                - python multi_test.py --test_count {value} --testset_root {root dir of data} --testset_type {data split} 
+                - python multi_eval.py --results_dir {directory of test_videos}
         - multi_test.py uses all other arguments from test.py, just replace the first 6 arguments with the above three
         - multi_test.py: Chooses two random videos from data split of the root directory provided to make a synthetic mixture and performs separation. Repeats this process test_count times.
         - multi_eval.py : Evaluates all examples in the test_videos directory and appends results to one eval.txt file in the same directory. Lastly, appends the average values of all the result metrics in the file.
     - Mean Frame Feature of Facial Encodings (Code Changes/audioVisual_dataset.py)
         - Refer from line 173 to line 194 in the mentioned file
-        - Instead of choosing one random frame for facial attributes, it chooses <num_frames> frames randomly and passes the average facial frame for further processing.
+        - Instead of choosing one random frame for facial attributes, it chooses {num_frames} frames randomly and passes the average facial frame for further processing.
     - Attempted adding a Self-Attention Layer in the AudioVisual Model (Code Changes/Networks.py)
         - Refer to lines 158-162 and lines 180-187 in the mentioned file.
         - Tried to add a self-attention layer to the audioVisual feature vector.
